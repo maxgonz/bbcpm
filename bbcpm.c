@@ -66,19 +66,17 @@ int cp_contents(char *file_in, char *file_out) {
 	return 0;
 }
 
-
 int main(int argc, char *argv[]) {
-  int ret;
-  
+	int ret;
+
 	if (argc != 3) {
 		fprintf(stderr, "Usage: %s <source> <target>\n", argv[0]);
 	}
 
 	ret = cp_contents(argv[1], argv[2]);
-  
-  if (ret == 1) {
-    fprintf(stderr, "Can't copy the contents!\n");
-  }
+	if (ret == 1) {
+		fprintf(stderr, "Can't copy the contents!\n");
+	}
 
 	return 0;
 }
