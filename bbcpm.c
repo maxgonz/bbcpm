@@ -52,8 +52,8 @@ int cp_contents(char *file_in, char *file_out) {
 	t_addr = mmap(0, sz, PROT_READ | PROT_WRITE, MAP_SHARED, fd_out, 0);
 
 	/* need to make the output file the size of the
-	* input file before copying anything into it
-	*/
+	 * input file before copying anything into it
+	 */
 	ftruncate(fd_out, sz);
 
 	/* copy the memory in s_addr to t_addr */
