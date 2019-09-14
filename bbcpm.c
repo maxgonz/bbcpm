@@ -49,7 +49,7 @@ int cp_contents(char *file_in, char *file_out) {
 	s_addr = mmap(0, sz, PROT_READ, MAP_SHARED, fd_in, 0);
 
 	/* memory mapping of the output file */
-	t_addr = mmap(0, sz, PROT_READ | PROT_WRITE, MAP_SHARED, fd_out, 0);
+	t_addr = mmap(0, sz, (PROT_READ | PROT_WRITE), MAP_SHARED, fd_out, 0);
 
 	/* need to make the output file the size of the
 	 * input file before copying anything into it
