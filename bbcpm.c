@@ -71,11 +71,13 @@ int main(int argc, char *argv[]) {
 
 	if (argc != 3) {
 		fprintf(stderr, "Usage: %s <source> <target>\n", argv[0]);
+		return 1;
 	}
 
 	ret = cp_contents(argv[1], argv[2]);
-	if (ret == 1) {
+	if (ret > 0) {
 		fprintf(stderr, "Can't copy the contents!\n");
+		return 1;
 	}
 
 	return 0;
