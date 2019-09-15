@@ -15,7 +15,7 @@ size_t filesz(char *filename) {
 	ret = stat(filename, &st);
 	if (ret < 0) {
 		fprintf(stderr, "Can't stat file!\n");
-		return 1;
+		return ret;
 	}
 
 	size = st.st_size;
@@ -41,7 +41,7 @@ int cp_contents(char *file_in, char *file_out) {
 	}
 
 	sz = filesz(file_in);
-	if (sz == 1) {
+	if (sz < 0) {
 		return 1;
 	}
 
